@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Biblioteca {
+
+
+public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("********************Bem vindo a Biblioteca!********************");
+    System.out.println("              Por Favor selecione uma das opções:               ");
+    System.out.println("**********************************************************************");
+    livros ob = new livros();
+    cliente obStudent = new cliente();
+    int choice;
+    int searchChoice;
+
+    do{
+
+        ob.dispMenu();
+        choice = input.nextInt();
+
+        switch(choice){
+
+            case 1:
+                livro b = new livro();
+                ob.addLivro(b);
+                break;
+
+            case 2:
+                ob.upgradeLivroQty();
+                break;
+
+            case 3:
+                System.out.println("Presssione 1 para procurar com o numero serial");
+                System.out.println("Pressione 2 para procurar com o nome do autor do livro");
+                searchChoice = input.nextInt();
+
+                switch(searchChoice){
+
+                    case 1:
+                        ob.searchBySno();
+                        break;
+                    case 2:
+                        ob.searchByAuthorName();
+
+                }
+                break;
+
+            case 4:
+                ob.showAllLivros();
+                break;
+            case 5:
+                cliente s = new cliente();
+                obCliente.addClient(s);
+                break;
+            case 6:
+                obCliente.showAllCliente();
+                break;
+            case 7:
+            	obCliente.checkOutLivro(ob);
+                break;
+            case 8:
+                obCliente.checkInLivro(ob);
+                break;
+            default:
+                System.out.println("ESCOLHA DEVE SER FEITA ENTRE 0 A 8.");
+
+        }
+
+    }
+    while (choice!=0);
+}
+
+}
